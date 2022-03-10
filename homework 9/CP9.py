@@ -45,12 +45,9 @@ for i in range(80, 100):
         t_max = t[i]
     else:
         break
+
 A3 = t_max
-
 A4 = 1/(A3-A2)
-
-# plot.plot(t,v)
-# plot.show()
 
 ### Problem 2
 ### Use solve_ivp to solve the Chua equation
@@ -74,12 +71,6 @@ t = np.arange(0,100+0.05,0.05)
 
 sol1 = scipy.integrate.solve_ivp(model2, tspan,x, t_eval=t)
 
-
-#
-# plot.plot(t, sol1.y[0,:])
-# plot.plot(t, sol2.y[0,:])
-# plot.show()
-
 A5 = 1
 A6 = sol1.y.reshape([3,2001])
 
@@ -87,29 +78,6 @@ x2 = np.array([x0,y0+1e-5,z0])
 sol2 = scipy.integrate.solve_ivp(model2, tspan,x2, t_eval=t)
 
 A7 = np.max(np.abs(sol1.y-sol2.y))
-
-# def model3(t, x):
-#     dx1 = 16*(x[1]+1/6*x[0]-1/16*math.pow(x[0],3))
-#     dx2 = x[0]-x[1]+x[2]
-#     dx3 = -100*x[1]
-#     return np.array([dx1, dx2, dx3])
-#
-# x0 = 0.1
-# y0 = 0.2
-# z0 = 0.3
-#
-# x = np.array([x0,y0,z0])
-# tspan = (0,100)
-# t = np.arange(0,100+0.05,0.05)
-#
-# sol1 = scipy.integrate.solve_ivp(model3, tspan,x, t_eval=t)
-#
-# x2 = np.array([x0,y0+1e-5,z0])
-# sol2 = scipy.integrate.solve_ivp(model3, tspan,x2, t_eval=t)
-#
-# plot.plot(t, sol1.y[0,:])
-# plot.plot(t, sol2.y[0,:])
-# plot.show()
 
 A8 = 0
 
@@ -201,14 +169,5 @@ while np.abs(x_mid[-1]-xT) > 1e-8:
 A13 = x_mid.reshape([61,1])
 A14 = np.max(np.abs(A13-x_true))
 A15 = np.max(np.abs(A13-A11))
-print(A15)
-print(A12)
 
-# print(A12)
-# print(A15)
-# print(A14)
-# plot.plot(t,x_mid,'b',t, x_true, 'g',t, A11, 'r')
-#
-# plot.show()
-# plot.plot(t, x)
-# plot.show()
+plot.plot(t,x_mid,'b',t, x_true, 'g',t, A11, 'r')

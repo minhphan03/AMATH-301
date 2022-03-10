@@ -102,9 +102,6 @@ A2 = np.array([Ej_2, Ej_4, Ej_6, Ej_8]).reshape(1,4)
 A3 = np.array([Tgs_2, Tgs_4, Tgs_6, Tgs_8]).reshape(1,4)
 A4 = np.array([Egs_2, Egs_4, Egs_6, Egs_8]).reshape(1,4)
 
-print(A1)
-print(A2)
-
 ### Problem 2
 ###  Initialize your Day 0 vector x
 
@@ -235,8 +232,6 @@ def jacobi_problem3(A: np.ndarray, b: np.ndarray, tolerance: float):
 
     return X[:,t:(t+1)], t+1
 
-
-#
 A11, A12 = jacobi_problem3(A, rho, 1.0e-5)
 
 

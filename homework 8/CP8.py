@@ -154,7 +154,3 @@ x_true = 2*np.arctan(np.exp(8*t)/(1+math.sqrt(2)))
 
 sol = scipy.integrate.solve_ivp(f, tspan, np.array([np.pi/4]),t_eval=t)
 A15 = A14/np.max(np.abs(sol.y[0,:]-x_true))
-
-print(A10)
-print(A11)
-print(A12)

@@ -1,6 +1,5 @@
 import numpy as np
 import scipy.integrate
-import matplotlib.pyplot as plt
 import math
 ######################
 np.set_printoptions(precision = 9, linewidth=150)
@@ -103,13 +102,5 @@ F = lambda x: math.pow(x,2)/2-math.pow(x,3)/3
 f = lambda z, mu: mu/math.sqrt(F(mu)-F(mu*z))
 
 A13, err13 = scipy.integrate.quad(f, 0, 1, args=(0.95,))
-
-
 A14, err14 = scipy.integrate.quad(f, 0, 1, args=(0.5,))
-
-
 A15, err15 = scipy.integrate.quad(f, 0, 1, args=(0.01,))
-
-
-# plt.plot(t,N,'.')
-# plt.show()

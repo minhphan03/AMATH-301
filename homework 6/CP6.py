@@ -99,17 +99,14 @@ year = np.arange(0,62,1)
 
 # remove last year data
 peaks = np.delete(peaks, [62])
-print(peaks)
 troughs = np.delete(troughs, [62])
-print(troughs)
+
 A = (np.sum(peaks)-np.sum(troughs))/(62*2)
 B = 2*np.pi
 
 A13 = np.array([A,B]).reshape(1,2)
-print(A13)
 A14 = la.norm((np.exp(np.polyval(coeffs1, t))+b + A*np.sin(B*t)) - co2)
-print(A14)
+
+# plot
 plt.plot(t, co2_proc)
-# plt.plot(t, co2, '.', t, np.exp(np.polyval(coeffs1, t))+b)
-# plt.plot(t, co2, '.', t, np.exp(np.polyval(coeffs1, t))+b + A*np.sin(B*t))
 plt.show()

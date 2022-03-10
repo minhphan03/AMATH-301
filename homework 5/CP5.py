@@ -80,9 +80,9 @@ A8 = i
 A9 = x
 
 
-# # plot
-# plt.plot(x,c, x, dc)
-# plt.axhline(c="black")
-# plt.axvline(c="black")
-# plt.show()
+# plot
+plt.plot(x,c, x, dc)
+plt.axhline(c="black")
+plt.axvline(c="black")
+plt.show()
 
